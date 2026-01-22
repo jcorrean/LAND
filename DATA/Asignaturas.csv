@@ -1,140 +1,140 @@
-Carrera,Asignatura,Semestre,Analítica
-Ing. en Ciencia de Datos,Introducción a la Ciencia de Datos,1,Sí
-Ing. en Ciencia de Datos,Algoritmos y Programación,1,Sí
-Ing. en Ciencia de Datos,Cálculo Diferencial e Integral,1,Sí
-Ing. en Ciencia de Datos,Álgebra Lineal,1,Sí
-Ing. en Ciencia de Datos,Persona y Verdad,1,No
-Ing. en Ciencia de Datos,Estructuras de Datos,2,Sí
-Ing. en Ciencia de Datos,Probabilidad y Estadística,2,Sí
-Ing. en Ciencia de Datos,Matemáticas Discretas,2,Sí
-Ing. en Ciencia de Datos,Programación Orientada a Objetos,2,Sí
-Ing. en Ciencia de Datos,Pensamiento Social Cristiano,2,No
-Ing. en Ciencia de Datos,Bases de Datos,3,Sí
-Ing. en Ciencia de Datos,Inferencia Estadística,3,Sí
-Ing. en Ciencia de Datos,Métodos Numéricos,3,No
-Ing. en Ciencia de Datos,Arquitectura de Computadoras,3,No
-Ing. en Ciencia de Datos,Aprendizaje Automático I,4,Sí
-Ing. en Ciencia de Datos,Minería de Datos,4,Sí
-Ing. en Ciencia de Datos,Sistemas Operativos,4,No
-Ing. en Ciencia de Datos,Optimización,4,No
-Ing. en Ciencia de Datos,Aprendizaje Automático II,5,Sí
-Ing. en Ciencia de Datos,Visualización de Datos,5,Sí
-Ing. en Ciencia de Datos,Big Data y Computación en la Nube,5,Sí
-Ing. en Ciencia de Datos,Ética y Gobernanza de Datos,6,Sí
-Ing. en Ciencia de Datos,Procesamiento de Lenguaje Natural,6,Sí
-Ing. en Ciencia de Datos,Analítica Predictiva,7,Sí
-Ing. en Ciencia de Datos,Proyecto Terminal I,7,No
-Ing. en Ciencia de Datos,Proyecto Terminal II,8,No
-Actuaría,Cálculo Diferencial,1,Sí
-Actuaría,Geometría Analítica,1,No
-Actuaría,Álgebra Superior,1,No
-Actuaría,Persona y Verdad,1,No
-Actuaría,Cálculo Integral,2,No
-Actuaría,Álgebra Lineal I,2,Sí
-Actuaría,Programación para Actuarios,2,No
-Actuaría,Pensamiento Social Cristiano,2,No
-Actuaría,Cálculo de Varias Variables,3,Sí
-Actuaría,Probabilidad I,3,Sí
-Actuaría,Matemáticas Financieras,3,Sí
-Actuaría,Álgebra Lineal II,3,Sí
-Actuaría,Probabilidad II,4,Sí
-Actuaría,Inferencia Estadística,4,Sí
-Actuaría,Teoría del Interés,4,No
-Actuaría,Microeconomía,4,Sí
-Actuaría,Procesos Estocásticos,5,Sí
-Actuaría,Modelos Lineales (Regresión),5,Sí
-Actuaría,Seguros de Vida,5,No
-Actuaría,Macroeconomía,5,No
-Actuaría,Estadística Bayesiana,6,Sí
-Actuaría,Series de Tiempo,6,Sí
-Actuaría,Finanzas Corporativas,6,No
-Actuaría,Gestión de Riesgos Financieros,7,No
-Actuaría,Demografía,7,No
-Actuaría,Pensiones y Seguridad Social,8,No
-Administración de Empresas,Introducción a la Administración,1,No
-Administración de Empresas,Contabilidad Financiera,1,No
-Administración de Empresas,Matemáticas para Negocios,1,Sí
-Administración de Empresas,Persona y Verdad,1,No
-Administración de Empresas,Procesos Administrativos,2,No
-Administración de Empresas,Contabilidad de Costos,2,No
-Administración de Empresas,Estadística Descriptiva,2,Sí
-Administración de Empresas,Entorno Microeconómico,2,No
-Administración de Empresas,Pensamiento Social Cristiano,2,No
-Administración de Empresas,Administración de Talento Humano,3,No
-Administración de Empresas,Información Financiera para la Toma de Decisiones,3,Sí
-Administración de Empresas,Estadística Inferencial para Negocios,3,Sí
-Administración de Empresas,Entorno Macroeconómico,3,No
-Administración de Empresas,Mercadotecnia,4,Sí
-Administración de Empresas,Finanzas Empresariales,4,No
-Administración de Empresas,Derecho Mercantil,4,No
-Administración de Empresas,Comportamiento Organizacional,4,Sí
-Administración de Empresas,Investigación de Mercados,5,Sí
-Administración de Empresas,Administración de Operaciones,5,Sí
-Administración de Empresas,Presupuestos,5,No
-Administración de Empresas,Inteligencia de Negocios (BI),6,Sí
-Administración de Empresas,Administración Estratégica,6,No
-Administración de Empresas,Simulación de Negocios,7,Sí
-Administración de Empresas,Emprendimiento e Innovación,7,Sí
-Administración de Empresas,Ética en los Negocios,8,Sí
-Administración de Empresas,Dirección General,8,No
-Finanzas,Matemáticas Financieras I,1,No
-Finanzas,Contabilidad de Riesgos,1,No
-Finanzas,Cálculo para Finanzas,1,No
-Finanzas,Persona y Verdad,1,No
-Finanzas,Matemáticas Financieras II,2,No
-Finanzas,Análisis de Estados Financieros,2,No
-Finanzas,Estadística para Finanzas,2,Sí
-Finanzas,Pensamiento Social Cristiano,2,No
-Finanzas,Econometría Financiera,3,Sí
-Finanzas,Mercados de Dinero y Capitales,3,No
-Finanzas,Finanzas Corporativas I,4,No
-Finanzas,Valuación de Empresas,4,No
-Finanzas,Derivados Financieros,5,No
-Finanzas,Administración de Portafolios,6,No
-Finanzas,Riesgo de Mercado y Crédito,7,No
-Ingeniería Industrial,Introducción a la Ingeniería,1,No
-Ingeniería Industrial,Química,1,No
-Ingeniería Industrial,Cálculo Diferencial,1,No
-Ingeniería Industrial,Dibujo Industrial,1,No
-Ingeniería Industrial,Estática,2,No
-Ingeniería Industrial,Cálculo Integral,2,No
-Ingeniería Industrial,Algoritmos y Programación,2,Sí
-Ingeniería Industrial,Probabilidad y Estadística,3,Sí
-Ingeniería Industrial,Termodinámica,3,No
-Ingeniería Industrial,Dinámica,3,No
-Ingeniería Industrial,Investigación de Operaciones I (Lineal),4,Sí
-Ingeniería Industrial,Ingeniería de Métodos,4,No
-Ingeniería Industrial,Investigación de Operaciones II (Estocástica),5,No
-Ingeniería Industrial,Simulación de Eventos Discretos,6,No
-Ingeniería Industrial,Control Estadístico de Calidad,6,Sí
-Ingeniería Industrial,Logística y Cadenas de Suministro,7,Sí
-Ingeniería Industrial,Sistemas de Manufactura,7,Sí
-Ingeniería Industrial,Planeación y Control de la Producción,8,Sí
-Mercadotecnia,Fundamentos de Mercadotecnia,1,Sí
-Mercadotecnia,Sociología del Consumo,1,No
-Mercadotecnia,Contabilidad para Mercadotecnia,1,No
-Mercadotecnia,Persona y Verdad,1,No
-Mercadotecnia,Comportamiento del Consumidor,2,Sí
-Mercadotecnia,Estadística Aplicada a Mercados,2,Sí
-Mercadotecnia,Comunicación Integral de Marca,3,No
-Mercadotecnia,Investigación Cualitativa,3,No
-Mercadotecnia,Investigación Cuantitativa,4,Sí
-Mercadotecnia,Estrategia de Precios,4,Sí
-Mercadotecnia,Marketing Digital y Redes Sociales,5,Sí
-Mercadotecnia,Analítica de Mercadotecnia,6,Sí
-Mercadotecnia,Gestión de Ventas,7,Sí
-Mercadotecnia,Branding y Posicionamiento,8,No
-Economía,Historia Económica General,1,No
-Economía,Cálculo Diferencial para Economía,1,No
-Economía,Microeconomía I,1,Sí
-Economía,Persona y Verdad,1,No
-Economía,Microeconomía II,2,Sí
-Economía,Macroeconomía I,2,Sí
-Economía,Estadística Económica,2,Sí
-Economía,Pensamiento Social Cristiano,2,No
-Economía,Econometría I,3,Sí
-Economía,Macroeconomía II,3,No
-Economía,Econometría II,4,No
-Economía,Teoría de Juegos,5,Sí
-Economía,Política Económica,6,No
-Economía,Evaluación de Proyectos sociales,7,Sí
+EGO,Carrera,Asignatura,Semestre,Analítica
+LAND,Ing. en Ciencia de Datos,Introducción a la Ciencia de Datos,1,Sí
+LAND,Ing. en Ciencia de Datos,Algoritmos y Programación,1,Sí
+LAND,Ing. en Ciencia de Datos,Cálculo Diferencial e Integral,1,Sí
+LAND,Ing. en Ciencia de Datos,Álgebra Lineal,1,Sí
+LAND,Ing. en Ciencia de Datos,Persona y Verdad,1,No
+LAND,Ing. en Ciencia de Datos,Estructuras de Datos,2,Sí
+LAND,Ing. en Ciencia de Datos,Probabilidad y Estadística,2,Sí
+LAND,Ing. en Ciencia de Datos,Matemáticas Discretas,2,Sí
+LAND,Ing. en Ciencia de Datos,Programación Orientada a Objetos,2,Sí
+LAND,Ing. en Ciencia de Datos,Pensamiento Social Cristiano,2,No
+LAND,Ing. en Ciencia de Datos,Bases de Datos,3,Sí
+LAND,Ing. en Ciencia de Datos,Inferencia Estadística,3,Sí
+LAND,Ing. en Ciencia de Datos,Métodos Numéricos,3,No
+LAND,Ing. en Ciencia de Datos,Arquitectura de Computadoras,3,No
+LAND,Ing. en Ciencia de Datos,Aprendizaje Automático I,4,Sí
+LAND,Ing. en Ciencia de Datos,Minería de Datos,4,Sí
+LAND,Ing. en Ciencia de Datos,Sistemas Operativos,4,No
+LAND,Ing. en Ciencia de Datos,Optimización,4,No
+LAND,Ing. en Ciencia de Datos,Aprendizaje Automático II,5,Sí
+LAND,Ing. en Ciencia de Datos,Visualización de Datos,5,Sí
+LAND,Ing. en Ciencia de Datos,Big Data y Computación en la Nube,5,Sí
+LAND,Ing. en Ciencia de Datos,Ética y Gobernanza de Datos,6,Sí
+LAND,Ing. en Ciencia de Datos,Procesamiento de Lenguaje Natural,6,Sí
+LAND,Ing. en Ciencia de Datos,Analítica Predictiva,7,Sí
+LAND,Ing. en Ciencia de Datos,Proyecto Terminal I,7,No
+LAND,Ing. en Ciencia de Datos,Proyecto Terminal II,8,No
+LAND,Actuaría,Cálculo Diferencial,1,Sí
+LAND,Actuaría,Geometría Analítica,1,No
+LAND,Actuaría,Álgebra Superior,1,No
+LAND,Actuaría,Persona y Verdad,1,No
+LAND,Actuaría,Cálculo Integral,2,No
+LAND,Actuaría,Álgebra Lineal I,2,Sí
+LAND,Actuaría,Programación para Actuarios,2,No
+LAND,Actuaría,Pensamiento Social Cristiano,2,No
+LAND,Actuaría,Cálculo de Varias Variables,3,Sí
+LAND,Actuaría,Probabilidad I,3,Sí
+LAND,Actuaría,Matemáticas Financieras,3,Sí
+LAND,Actuaría,Álgebra Lineal II,3,Sí
+LAND,Actuaría,Probabilidad II,4,Sí
+LAND,Actuaría,Inferencia Estadística,4,Sí
+LAND,Actuaría,Teoría del Interés,4,No
+LAND,Actuaría,Microeconomía,4,Sí
+LAND,Actuaría,Procesos Estocásticos,5,Sí
+LAND,Actuaría,Modelos Lineales (Regresión),5,Sí
+LAND,Actuaría,Seguros de Vida,5,No
+LAND,Actuaría,Macroeconomía,5,No
+LAND,Actuaría,Estadística Bayesiana,6,Sí
+LAND,Actuaría,Series de Tiempo,6,Sí
+LAND,Actuaría,Finanzas Corporativas,6,No
+LAND,Actuaría,Gestión de Riesgos Financieros,7,No
+LAND,Actuaría,Demografía,7,No
+LAND,Actuaría,Pensiones y Seguridad Social,8,No
+LAND,Administración de Empresas,Introducción a la Administración,1,No
+LAND,Administración de Empresas,Contabilidad Financiera,1,No
+LAND,Administración de Empresas,Matemáticas para Negocios,1,Sí
+LAND,Administración de Empresas,Persona y Verdad,1,No
+LAND,Administración de Empresas,Procesos Administrativos,2,No
+LAND,Administración de Empresas,Contabilidad de Costos,2,No
+LAND,Administración de Empresas,Estadística Descriptiva,2,Sí
+LAND,Administración de Empresas,Entorno Microeconómico,2,No
+LAND,Administración de Empresas,Pensamiento Social Cristiano,2,No
+LAND,Administración de Empresas,Administración de Talento Humano,3,No
+LAND,Administración de Empresas,Información Financiera para la Toma de Decisiones,3,Sí
+LAND,Administración de Empresas,Estadística Inferencial para Negocios,3,Sí
+LAND,Administración de Empresas,Entorno Macroeconómico,3,No
+LAND,Administración de Empresas,Mercadotecnia,4,Sí
+LAND,Administración de Empresas,Finanzas Empresariales,4,No
+LAND,Administración de Empresas,Derecho Mercantil,4,No
+LAND,Administración de Empresas,Comportamiento Organizacional,4,Sí
+LAND,Administración de Empresas,Investigación de Mercados,5,Sí
+LAND,Administración de Empresas,Administración de Operaciones,5,Sí
+LAND,Administración de Empresas,Presupuestos,5,No
+LAND,Administración de Empresas,Inteligencia de Negocios (BI),6,Sí
+LAND,Administración de Empresas,Administración Estratégica,6,No
+LAND,Administración de Empresas,Simulación de Negocios,7,Sí
+LAND,Administración de Empresas,Emprendimiento e Innovación,7,Sí
+LAND,Administración de Empresas,Ética en los Negocios,8,Sí
+LAND,Administración de Empresas,Dirección General,8,No
+LAND,Finanzas,Matemáticas Financieras I,1,No
+LAND,Finanzas,Contabilidad de Riesgos,1,No
+LAND,Finanzas,Cálculo para Finanzas,1,No
+LAND,Finanzas,Persona y Verdad,1,No
+LAND,Finanzas,Matemáticas Financieras II,2,No
+LAND,Finanzas,Análisis de Estados Financieros,2,No
+LAND,Finanzas,Estadística para Finanzas,2,Sí
+LAND,Finanzas,Pensamiento Social Cristiano,2,No
+LAND,Finanzas,Econometría Financiera,3,Sí
+LAND,Finanzas,Mercados de Dinero y Capitales,3,No
+LAND,Finanzas,Finanzas Corporativas I,4,No
+LAND,Finanzas,Valuación de Empresas,4,No
+LAND,Finanzas,Derivados Financieros,5,No
+LAND,Finanzas,Administración de Portafolios,6,No
+LAND,Finanzas,Riesgo de Mercado y Crédito,7,No
+LAND,Ingeniería Industrial,Introducción a la Ingeniería,1,No
+LAND,Ingeniería Industrial,Química,1,No
+LAND,Ingeniería Industrial,Cálculo Diferencial,1,No
+LAND,Ingeniería Industrial,Dibujo Industrial,1,No
+LAND,Ingeniería Industrial,Estática,2,No
+LAND,Ingeniería Industrial,Cálculo Integral,2,No
+LAND,Ingeniería Industrial,Algoritmos y Programación,2,Sí
+LAND,Ingeniería Industrial,Probabilidad y Estadística,3,Sí
+LAND,Ingeniería Industrial,Termodinámica,3,No
+LAND,Ingeniería Industrial,Dinámica,3,No
+LAND,Ingeniería Industrial,Investigación de Operaciones I (Lineal),4,Sí
+LAND,Ingeniería Industrial,Ingeniería de Métodos,4,No
+LAND,Ingeniería Industrial,Investigación de Operaciones II (Estocástica),5,No
+LAND,Ingeniería Industrial,Simulación de Eventos Discretos,6,No
+LAND,Ingeniería Industrial,Control Estadístico de Calidad,6,Sí
+LAND,Ingeniería Industrial,Logística y Cadenas de Suministro,7,Sí
+LAND,Ingeniería Industrial,Sistemas de Manufactura,7,Sí
+LAND,Ingeniería Industrial,Planeación y Control de la Producción,8,Sí
+LAND,Mercadotecnia,Fundamentos de Mercadotecnia,1,Sí
+LAND,Mercadotecnia,Sociología del Consumo,1,No
+LAND,Mercadotecnia,Contabilidad para Mercadotecnia,1,No
+LAND,Mercadotecnia,Persona y Verdad,1,No
+LAND,Mercadotecnia,Comportamiento del Consumidor,2,Sí
+LAND,Mercadotecnia,Estadística Aplicada a Mercados,2,Sí
+LAND,Mercadotecnia,Comunicación Integral de Marca,3,No
+LAND,Mercadotecnia,Investigación Cualitativa,3,No
+LAND,Mercadotecnia,Investigación Cuantitativa,4,Sí
+LAND,Mercadotecnia,Estrategia de Precios,4,Sí
+LAND,Mercadotecnia,Marketing Digital y Redes Sociales,5,Sí
+LAND,Mercadotecnia,Analítica de Mercadotecnia,6,Sí
+LAND,Mercadotecnia,Gestión de Ventas,7,Sí
+LAND,Mercadotecnia,Branding y Posicionamiento,8,No
+LAND,Economía,Historia Económica General,1,No
+LAND,Economía,Cálculo Diferencial para Economía,1,No
+LAND,Economía,Microeconomía I,1,Sí
+LAND,Economía,Persona y Verdad,1,No
+LAND,Economía,Microeconomía II,2,Sí
+LAND,Economía,Macroeconomía I,2,Sí
+LAND,Economía,Estadística Económica,2,Sí
+LAND,Economía,Pensamiento Social Cristiano,2,No
+LAND,Economía,Econometría I,3,Sí
+LAND,Economía,Macroeconomía II,3,No
+LAND,Economía,Econometría II,4,No
+LAND,Economía,Teoría de Juegos,5,Sí
+LAND,Economía,Política Económica,6,No
+LAND,Economía,Evaluación de Proyectos sociales,7,Sí

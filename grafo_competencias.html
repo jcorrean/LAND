@@ -1,0 +1,604 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 900px;
+                 background-color: #222222;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+<div id="panel" style="
+position:absolute;
+top:20px;
+left:20px;
+width:340px;
+background:rgba(0,0,0,0.9);
+padding:20px;
+border-radius:10px;
+border:1px solid gray;
+color:white;
+z-index:999;
+font-family:Arial;
+font-size:12px;
+">
+
+<h2>Explorador Curricular</h2>
+
+<label><b>Asignatura</b></label><br>
+
+<select id="asignaturaFilter"
+style="width:100%;"
+onchange="applyFilters()">
+
+<option value="ALL">Todas</option>
+
+    <option value="Analítica de Cadenas de Suministro">
+    Analítica de Cadenas de Suministro
+    </option>
+    
+    <option value="Analítica de Consumo Masivo">
+    Analítica de Consumo Masivo
+    </option>
+    
+    <option value="Analítica de Redes Sociales y Teoría de Grafos">
+    Analítica de Redes Sociales y Teoría de Grafos
+    </option>
+    
+    <option value="Analítica del Comercio Electrónico">
+    Analítica del Comercio Electrónico
+    </option>
+    
+    <option value="Analítica para la Innovación Empresarial">
+    Analítica para la Innovación Empresarial
+    </option>
+    
+    <option value="Análisis y Gestión Digital de Estados Financieros">
+    Análisis y Gestión Digital de Estados Financieros
+    </option>
+    
+    <option value="Aprendizaje Automático Aplicado a Finanzas">
+    Aprendizaje Automático Aplicado a Finanzas
+    </option>
+    
+    <option value="Automatización de Procesos">
+    Automatización de Procesos
+    </option>
+    
+    <option value="Bases de Datos para Negocios Digitales">
+    Bases de Datos para Negocios Digitales
+    </option>
+    
+    <option value="Big Data Aplicada a los Negocios">
+    Big Data Aplicada a los Negocios
+    </option>
+    
+    <option value="Ciudadanía Mundial y Medio Ambiente">
+    Ciudadanía Mundial y Medio Ambiente
+    </option>
+    
+    <option value="Construcción de Democracia y Sostenibilidad">
+    Construcción de Democracia y Sostenibilidad
+    </option>
+    
+    <option value="Datos Geolocalizados para los Negocios">
+    Datos Geolocalizados para los Negocios
+    </option>
+    
+    <option value="Desarrollo de Canales de Distribución y Venta Digital">
+    Desarrollo de Canales de Distribución y Venta Digital
+    </option>
+    
+    <option value="Emprendimiento en la Era Digital">
+    Emprendimiento en la Era Digital
+    </option>
+    
+    <option value="Fundamentos de Negocios Digitales">
+    Fundamentos de Negocios Digitales
+    </option>
+    
+    <option value="Gerencia Estratégica de Datos e Información">
+    Gerencia Estratégica de Datos e Información
+    </option>
+    
+    <option value="Gobierno de Datos, Privacidad y Seguridad">
+    Gobierno de Datos, Privacidad y Seguridad
+    </option>
+    
+    <option value="Inmersión Social / Reto de Hallazgos">
+    Inmersión Social / Reto de Hallazgos
+    </option>
+    
+    <option value="Inteligencia de Negocios Digitales">
+    Inteligencia de Negocios Digitales
+    </option>
+    
+    <option value="La Persona en su Entorno Socioambiental">
+    La Persona en su Entorno Socioambiental
+    </option>
+    
+    <option value="Laboratorio de Analítica">
+    Laboratorio de Analítica
+    </option>
+    
+    <option value="Modelos de Analítica Descriptiva, Predictiva y Prescriptiva">
+    Modelos de Analítica Descriptiva, Predictiva y Prescriptiva
+    </option>
+    
+    <option value="Negocios Digitales y Servicios en la Nube">
+    Negocios Digitales y Servicios en la Nube
+    </option>
+    
+    <option value="Optimización y Eficiencia de la IA">
+    Optimización y Eficiencia de la IA
+    </option>
+    
+    <option value="Programación para Analítica">
+    Programación para Analítica
+    </option>
+    
+    <option value="Proyecto Integrador y Evaluación Externa">
+    Proyecto Integrador y Evaluación Externa
+    </option>
+    
+    <option value="Pruebas A-B y Experimentación Digital">
+    Pruebas A-B y Experimentación Digital
+    </option>
+    
+    <option value="Retos de Hallazgos">
+    Retos de Hallazgos
+    </option>
+    
+    <option value="Sistemas de Gestión de Datos">
+    Sistemas de Gestión de Datos
+    </option>
+    
+    <option value="Solución Avanzada de Problemas de Analítica">
+    Solución Avanzada de Problemas de Analítica
+    </option>
+    
+    <option value="Taller de Formación y Acción Social">
+    Taller de Formación y Acción Social
+    </option>
+    
+    <option value="Visualización de Datos de Negocios">
+    Visualización de Datos de Negocios
+    </option>
+    
+    <option value="Ética en Analítica y Negocios Digitales">
+    Ética en Analítica y Negocios Digitales
+    </option>
+    
+
+</select>
+
+<br><br>
+
+<label><b>Función</b></label><br>
+
+<select id="funcionFilter"
+style="width:100%;"
+onchange="applyFilters()">
+
+<option value="ALL">Todas</option>
+<option value="1">Función 1</option>
+<option value="2">Función 2</option>
+<option value="3">Función 3</option>
+<option value="4">Función 4</option>
+<option value="5">Función 5</option>
+
+</select>
+
+<br><br>
+
+<label><b>Competencia</b></label><br>
+
+<select id="competenciaFilter"
+style="width:100%;"
+onchange="applyFilters()">
+
+<option value="ALL">Todas</option>
+
+    <option value="Competencia 1.1">
+    Competencia 1.1
+    </option>
+    
+    <option value="Competencia 1.2">
+    Competencia 1.2
+    </option>
+    
+    <option value="Competencia 1.3">
+    Competencia 1.3
+    </option>
+    
+    <option value="Competencia 2.1">
+    Competencia 2.1
+    </option>
+    
+    <option value="Competencia 2.2">
+    Competencia 2.2
+    </option>
+    
+    <option value="Competencia 2.3">
+    Competencia 2.3
+    </option>
+    
+    <option value="Competencia 3.1">
+    Competencia 3.1
+    </option>
+    
+    <option value="Competencia 3.2">
+    Competencia 3.2
+    </option>
+    
+    <option value="Competencia 3.3">
+    Competencia 3.3
+    </option>
+    
+    <option value="Competencia 4.1">
+    Competencia 4.1
+    </option>
+    
+    <option value="Competencia 4.2">
+    Competencia 4.2
+    </option>
+    
+    <option value="Competencia 4.3">
+    Competencia 4.3
+    </option>
+    
+    <option value="Competencia 5.1">
+    Competencia 5.1
+    </option>
+    
+    <option value="Competencia 5.2">
+    Competencia 5.2
+    </option>
+    
+    <option value="Competencia 5.3">
+    Competencia 5.3
+    </option>
+    
+
+</select>
+
+<br><br>
+
+<button onclick="resetGraph()">
+Mostrar Red Completa
+</button>
+
+</div>
+
+<div id="legend" style="
+position:absolute;
+top:20px;
+right:20px;
+width:360px;
+max-height:90%;
+overflow-y:auto;
+background:rgba(0,0,0,0.9);
+padding:20px;
+border-radius:10px;
+border:1px solid gray;
+z-index:999;
+color:white;
+font-family:Arial;
+font-size:12px;
+">
+
+<h2>Funciones y Competencias</h2>
+
+<p><span style="color:#4A90E2;">●</span>
+Asignaturas
+</p>
+
+<hr>
+
+<p><span style="color:#1f77b4;">◆</span>
+<b>Función 1</b><br>
+Modelos de negocio y emprendimiento digital
+</p>
+
+<p><span style="color:#2ca02c;">◆</span>
+<b>Función 2</b><br>
+Analítica de datos y humanización del dato
+</p>
+
+<p><span style="color:#ff7f0e;">◆</span>
+<b>Función 3</b><br>
+Toma de decisiones y resolución de problemas
+</p>
+
+<p><span style="color:#9467bd;">◆</span>
+<b>Función 4</b><br>
+Liderazgo humanista y transformación digital
+</p>
+
+<p><span style="color:#d62728;">◆</span>
+<b>Función 5</b><br>
+Transformación y sostenibilidad organizacional
+</p>
+
+<hr>
+
+<p>
+Use los filtros para explorar el currículo.
+</p>
+
+</div>
+
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#4A90E2", "font": {"color": "white"}, "id": "Anal\u00edtica de Cadenas de Suministro", "label": "Anal\u00edtica de Cadenas de Suministro", "shape": "dot", "size": 20, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Anal\u00edtica de Cadenas de Suministro\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 5\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Anal\u00edtica de Consumo Masivo", "label": "Anal\u00edtica de Consumo Masivo", "shape": "dot", "size": 21, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Anal\u00edtica de Consumo Masivo\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 6\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Anal\u00edtica de Redes Sociales y Teor\u00eda de Grafos", "label": "Anal\u00edtica de Redes Sociales y Teor\u00eda de Grafos", "shape": "dot", "size": 17, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Anal\u00edtica de Redes Sociales y Teor\u00eda de Grafos\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 2\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Anal\u00edtica del Comercio Electr\u00f3nico", "label": "Anal\u00edtica del Comercio Electr\u00f3nico", "shape": "dot", "size": 23, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Anal\u00edtica del Comercio Electr\u00f3nico\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 8\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Anal\u00edtica para la Innovaci\u00f3n Empresarial", "label": "Anal\u00edtica para la Innovaci\u00f3n Empresarial", "shape": "dot", "size": 23, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Anal\u00edtica para la Innovaci\u00f3n Empresarial\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 8\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "An\u00e1lisis y Gesti\u00f3n Digital de Estados Financieros", "label": "An\u00e1lisis y Gesti\u00f3n Digital de Estados Financieros", "shape": "dot", "size": 20, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        An\u00e1lisis y Gesti\u00f3n Digital de Estados Financieros\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 5\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Aprendizaje Autom\u00e1tico Aplicado a Finanzas", "label": "Aprendizaje Autom\u00e1tico Aplicado a Finanzas", "shape": "dot", "size": 17, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Aprendizaje Autom\u00e1tico Aplicado a Finanzas\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 2\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Automatizaci\u00f3n de Procesos", "label": "Automatizaci\u00f3n de Procesos", "shape": "dot", "size": 19, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Automatizaci\u00f3n de Procesos\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 4\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Bases de Datos para Negocios Digitales", "label": "Bases de Datos para Negocios Digitales", "shape": "dot", "size": 18, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Bases de Datos para Negocios Digitales\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 3\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Big Data Aplicada a los Negocios", "label": "Big Data Aplicada a los Negocios", "shape": "dot", "size": 22, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Big Data Aplicada a los Negocios\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 7\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Ciudadan\u00eda Mundial y Medio Ambiente", "label": "Ciudadan\u00eda Mundial y Medio Ambiente", "shape": "dot", "size": 17, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Ciudadan\u00eda Mundial y Medio Ambiente\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 2\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Construcci\u00f3n de Democracia y Sostenibilidad", "label": "Construcci\u00f3n de Democracia y Sostenibilidad", "shape": "dot", "size": 16, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Construcci\u00f3n de Democracia y Sostenibilidad\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 1\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Datos Geolocalizados para los Negocios", "label": "Datos Geolocalizados para los Negocios", "shape": "dot", "size": 21, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Datos Geolocalizados para los Negocios\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 6\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Desarrollo de Canales de Distribuci\u00f3n y Venta Digital", "label": "Desarrollo de Canales de Distribuci\u00f3n y Venta Digital", "shape": "dot", "size": 19, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Desarrollo de Canales de Distribuci\u00f3n y Venta Digital\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 4\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Emprendimiento en la Era Digital", "label": "Emprendimiento en la Era Digital", "shape": "dot", "size": 20, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Emprendimiento en la Era Digital\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 5\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Fundamentos de Negocios Digitales", "label": "Fundamentos de Negocios Digitales", "shape": "dot", "size": 20, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Fundamentos de Negocios Digitales\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 5\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Gerencia Estrat\u00e9gica de Datos e Informaci\u00f3n", "label": "Gerencia Estrat\u00e9gica de Datos e Informaci\u00f3n", "shape": "dot", "size": 22, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Gerencia Estrat\u00e9gica de Datos e Informaci\u00f3n\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 7\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Gobierno de Datos, Privacidad y Seguridad", "label": "Gobierno de Datos, Privacidad y Seguridad", "shape": "dot", "size": 18, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Gobierno de Datos, Privacidad y Seguridad\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 3\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Inmersi\u00f3n Social / Reto de Hallazgos", "label": "Inmersi\u00f3n Social / Reto de Hallazgos", "shape": "dot", "size": 16, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Inmersi\u00f3n Social / Reto de Hallazgos\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 1\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Inteligencia de Negocios Digitales", "label": "Inteligencia de Negocios Digitales", "shape": "dot", "size": 21, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Inteligencia de Negocios Digitales\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 6\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "La Persona en su Entorno Socioambiental", "label": "La Persona en su Entorno Socioambiental", "shape": "dot", "size": 16, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        La Persona en su Entorno Socioambiental\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 1\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Laboratorio de Anal\u00edtica", "label": "Laboratorio de Anal\u00edtica", "shape": "dot", "size": 17, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Laboratorio de Anal\u00edtica\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 2\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Modelos de Anal\u00edtica Descriptiva, Predictiva y Prescriptiva", "label": "Modelos de Anal\u00edtica Descriptiva, Predictiva y Prescriptiva", "shape": "dot", "size": 20, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Modelos de Anal\u00edtica Descriptiva, Predictiva y Prescriptiva\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 5\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Negocios Digitales y Servicios en la Nube", "label": "Negocios Digitales y Servicios en la Nube", "shape": "dot", "size": 21, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Negocios Digitales y Servicios en la Nube\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 6\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Optimizaci\u00f3n y Eficiencia de la IA", "label": "Optimizaci\u00f3n y Eficiencia de la IA", "shape": "dot", "size": 17, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Optimizaci\u00f3n y Eficiencia de la IA\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 2\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Programaci\u00f3n para Anal\u00edtica", "label": "Programaci\u00f3n para Anal\u00edtica", "shape": "dot", "size": 17, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Programaci\u00f3n para Anal\u00edtica\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 2\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Proyecto Integrador y Evaluaci\u00f3n Externa", "label": "Proyecto Integrador y Evaluaci\u00f3n Externa", "shape": "dot", "size": 21, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Proyecto Integrador y Evaluaci\u00f3n Externa\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 6\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Pruebas A-B y Experimentaci\u00f3n Digital", "label": "Pruebas A-B y Experimentaci\u00f3n Digital", "shape": "dot", "size": 18, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Pruebas A-B y Experimentaci\u00f3n Digital\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 3\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Retos de Hallazgos", "label": "Retos de Hallazgos", "shape": "dot", "size": 19, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Retos de Hallazgos\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 4\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Sistemas de Gesti\u00f3n de Datos", "label": "Sistemas de Gesti\u00f3n de Datos", "shape": "dot", "size": 17, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Sistemas de Gesti\u00f3n de Datos\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 2\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Soluci\u00f3n Avanzada de Problemas de Anal\u00edtica", "label": "Soluci\u00f3n Avanzada de Problemas de Anal\u00edtica", "shape": "dot", "size": 17, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Soluci\u00f3n Avanzada de Problemas de Anal\u00edtica\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 2\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Taller de Formaci\u00f3n y Acci\u00f3n Social", "label": "Taller de Formaci\u00f3n y Acci\u00f3n Social", "shape": "dot", "size": 16, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Taller de Formaci\u00f3n y Acci\u00f3n Social\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 1\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "Visualizaci\u00f3n de Datos de Negocios", "label": "Visualizaci\u00f3n de Datos de Negocios", "shape": "dot", "size": 18, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        Visualizaci\u00f3n de Datos de Negocios\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 3\n        "}, {"color": "#4A90E2", "font": {"color": "white"}, "id": "\u00c9tica en Anal\u00edtica y Negocios Digitales", "label": "\u00c9tica en Anal\u00edtica y Negocios Digitales", "shape": "dot", "size": 18, "tipo": "asignatura", "title": "\n        \u003cb\u003eAsignatura\u003c/b\u003e\u003cbr\u003e\n        \u00c9tica en Anal\u00edtica y Negocios Digitales\u003cbr\u003e\u003cbr\u003e\n        Competencias asociadas: 3\n        "}, {"color": "#1f77b4", "font": {"color": "white"}, "funcion": "1", "id": "Competencia 1.1", "label": "1.1", "shape": "diamond", "size": 26, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 1.1\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 1\u003c/b\u003e\u003cbr\u003e\n    Modelos de negocio y emprendimiento digital\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Propone modelos de negocio y emprendimiento en sectores digitales para capitalizar oportunidades estrat\u00e9gicas.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 4\n    "}, {"color": "#1f77b4", "font": {"color": "white"}, "funcion": "1", "id": "Competencia 1.2", "label": "1.2", "shape": "diamond", "size": 36, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 1.2\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 1\u003c/b\u003e\u003cbr\u003e\n    Modelos de negocio y emprendimiento digital\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Propone nuevos modelos de negocio y apoya a la alta direcci\u00f3n en la toma de decisiones.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 9\n    "}, {"color": "#1f77b4", "font": {"color": "white"}, "funcion": "1", "id": "Competencia 1.3", "label": "1.3", "shape": "diamond", "size": 30, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 1.3\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 1\u003c/b\u003e\u003cbr\u003e\n    Modelos de negocio y emprendimiento digital\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Implementa estrategias de emprendimiento digital para generar valor econ\u00f3mico y social.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 6\n    "}, {"color": "#2ca02c", "font": {"color": "white"}, "funcion": "2", "id": "Competencia 2.1", "label": "2.1", "shape": "diamond", "size": 54, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 2.1\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 2\u003c/b\u003e\u003cbr\u003e\n    Anal\u00edtica de datos y humanizaci\u00f3n del dato\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Procesa grandes vol\u00famenes de datos mediante software estad\u00edstico y lenguajes de programaci\u00f3n.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 18\n    "}, {"color": "#2ca02c", "font": {"color": "white"}, "funcion": "2", "id": "Competencia 2.2", "label": "2.2", "shape": "diamond", "size": 50, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 2.2\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 2\u003c/b\u003e\u003cbr\u003e\n    Anal\u00edtica de datos y humanizaci\u00f3n del dato\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Identifica patrones, correlaciones y tendencias para la toma de decisiones estrat\u00e9gicas.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 16\n    "}, {"color": "#2ca02c", "font": {"color": "white"}, "funcion": "2", "id": "Competencia 2.3", "label": "2.3", "shape": "diamond", "size": 30, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 2.3\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 2\u003c/b\u003e\u003cbr\u003e\n    Anal\u00edtica de datos y humanizaci\u00f3n del dato\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Dise\u00f1a estrategias de intervenci\u00f3n sustentadas en datos para optimizar procesos organizacionales.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 6\n    "}, {"color": "#ff7f0e", "font": {"color": "white"}, "funcion": "3", "id": "Competencia 3.1", "label": "3.1", "shape": "diamond", "size": 38, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 3.1\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 3\u003c/b\u003e\u003cbr\u003e\n    Toma de decisiones y resoluci\u00f3n de problemas\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Desarrolla KPI e informes mediante integraci\u00f3n de datos comerciales, financieros y operativos.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 10\n    "}, {"color": "#ff7f0e", "font": {"color": "white"}, "funcion": "3", "id": "Competencia 3.2", "label": "3.2", "shape": "diamond", "size": 46, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 3.2\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 3\u003c/b\u003e\u003cbr\u003e\n    Toma de decisiones y resoluci\u00f3n de problemas\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Resuelve problemas complejos utilizando pensamiento sist\u00e9mico y evidencia.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 14\n    "}, {"color": "#ff7f0e", "font": {"color": "white"}, "funcion": "3", "id": "Competencia 3.3", "label": "3.3", "shape": "diamond", "size": 32, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 3.3\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 3\u003c/b\u003e\u003cbr\u003e\n    Toma de decisiones y resoluci\u00f3n de problemas\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Aplica criterios \u00e9ticos en la gesti\u00f3n y an\u00e1lisis de datos.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 7\n    "}, {"color": "#9467bd", "font": {"color": "white"}, "funcion": "4", "id": "Competencia 4.1", "label": "4.1", "shape": "diamond", "size": 24, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 4.1\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 4\u003c/b\u003e\u003cbr\u003e\n    Liderazgo humanista y transformaci\u00f3n digital\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Identifica sesgos algor\u00edtmicos y riesgos de exclusi\u00f3n o discriminaci\u00f3n.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 3\n    "}, {"color": "#9467bd", "font": {"color": "white"}, "funcion": "4", "id": "Competencia 4.2", "label": "4.2", "shape": "diamond", "size": 30, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 4.2\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 4\u003c/b\u003e\u003cbr\u003e\n    Liderazgo humanista y transformaci\u00f3n digital\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Eval\u00faa cr\u00edticamente la calidad de los datos para proponer soluciones innovadoras.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 6\n    "}, {"color": "#9467bd", "font": {"color": "white"}, "funcion": "4", "id": "Competencia 4.3", "label": "4.3", "shape": "diamond", "size": 38, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 4.3\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 4\u003c/b\u003e\u003cbr\u003e\n    Liderazgo humanista y transformaci\u00f3n digital\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Lidera proyectos tecnol\u00f3gicos considerando impactos ambientales, sociales y de negocio.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 10\n    "}, {"color": "#d62728", "font": {"color": "white"}, "funcion": "5", "id": "Competencia 5.1", "label": "5.1", "shape": "diamond", "size": 36, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 5.1\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 5\u003c/b\u003e\u003cbr\u003e\n    Transformaci\u00f3n y sostenibilidad organizacional\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Dise\u00f1a estrategias de transformaci\u00f3n digital con atenci\u00f3n a impactos ambientales y sociales.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 9\n    "}, {"color": "#d62728", "font": {"color": "white"}, "funcion": "5", "id": "Competencia 5.2", "label": "5.2", "shape": "diamond", "size": 30, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 5.2\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 5\u003c/b\u003e\u003cbr\u003e\n    Transformaci\u00f3n y sostenibilidad organizacional\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Asesora a la alta direcci\u00f3n mediante comunicaci\u00f3n efectiva basada en evidencia.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 6\n    "}, {"color": "#d62728", "font": {"color": "white"}, "funcion": "5", "id": "Competencia 5.3", "label": "5.3", "shape": "diamond", "size": 34, "tipo": "competencia", "title": "\n    \u003cb\u003eCompetencia 5.3\u003c/b\u003e\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eFunci\u00f3n 5\u003c/b\u003e\u003cbr\u003e\n    Transformaci\u00f3n y sostenibilidad organizacional\u003cbr\u003e\u003cbr\u003e\n\n    \u003cb\u003eDescripci\u00f3n\u003c/b\u003e\u003cbr\u003e\n    Aplica modelos de gesti\u00f3n de riesgos y continuidad de negocio.\u003cbr\u003e\u003cbr\u003e\n\n    Asignaturas conectadas: 8\n    "}]);
+                  edges = new vis.DataSet([{"color": "#999999", "from": "Fundamentos de Negocios Digitales", "to": "Competencia 1.1", "width": 1.5}, {"color": "#999999", "from": "Fundamentos de Negocios Digitales", "to": "Competencia 1.2", "width": 1.5}, {"color": "#999999", "from": "Fundamentos de Negocios Digitales", "to": "Competencia 1.3", "width": 1.5}, {"color": "#999999", "from": "Fundamentos de Negocios Digitales", "to": "Competencia 5.1", "width": 1.5}, {"color": "#999999", "from": "Fundamentos de Negocios Digitales", "to": "Competencia 5.2", "width": 1.5}, {"color": "#999999", "from": "Visualizaci\u00f3n de Datos de Negocios", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Visualizaci\u00f3n de Datos de Negocios", "to": "Competencia 3.1", "width": 1.5}, {"color": "#999999", "from": "Visualizaci\u00f3n de Datos de Negocios", "to": "Competencia 5.2", "width": 1.5}, {"color": "#999999", "from": "Programaci\u00f3n para Anal\u00edtica", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Programaci\u00f3n para Anal\u00edtica", "to": "Competencia 3.1", "width": 1.5}, {"color": "#999999", "from": "Bases de Datos para Negocios Digitales", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Bases de Datos para Negocios Digitales", "to": "Competencia 2.3", "width": 1.5}, {"color": "#999999", "from": "Bases de Datos para Negocios Digitales", "to": "Competencia 4.2", "width": 1.5}, {"color": "#999999", "from": "An\u00e1lisis y Gesti\u00f3n Digital de Estados Financieros", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "An\u00e1lisis y Gesti\u00f3n Digital de Estados Financieros", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "An\u00e1lisis y Gesti\u00f3n Digital de Estados Financieros", "to": "Competencia 3.1", "width": 1.5}, {"color": "#999999", "from": "An\u00e1lisis y Gesti\u00f3n Digital de Estados Financieros", "to": "Competencia 4.2", "width": 1.5}, {"color": "#999999", "from": "An\u00e1lisis y Gesti\u00f3n Digital de Estados Financieros", "to": "Competencia 5.3", "width": 1.5}, {"color": "#999999", "from": "Modelos de Anal\u00edtica Descriptiva, Predictiva y Prescriptiva", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Modelos de Anal\u00edtica Descriptiva, Predictiva y Prescriptiva", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Modelos de Anal\u00edtica Descriptiva, Predictiva y Prescriptiva", "to": "Competencia 3.3", "width": 1.5}, {"color": "#999999", "from": "Modelos de Anal\u00edtica Descriptiva, Predictiva y Prescriptiva", "to": "Competencia 4.1", "width": 1.5}, {"color": "#999999", "from": "Modelos de Anal\u00edtica Descriptiva, Predictiva y Prescriptiva", "to": "Competencia 4.2", "width": 1.5}, {"color": "#999999", "from": "Inteligencia de Negocios Digitales", "to": "Competencia 1.2", "width": 1.5}, {"color": "#999999", "from": "Inteligencia de Negocios Digitales", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Inteligencia de Negocios Digitales", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Inteligencia de Negocios Digitales", "to": "Competencia 2.3", "width": 1.5}, {"color": "#999999", "from": "Inteligencia de Negocios Digitales", "to": "Competencia 3.1", "width": 1.5}, {"color": "#999999", "from": "Inteligencia de Negocios Digitales", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Retos de Hallazgos", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Retos de Hallazgos", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Retos de Hallazgos", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Retos de Hallazgos", "to": "Competencia 5.2", "width": 1.5}, {"color": "#999999", "from": "Big Data Aplicada a los Negocios", "to": "Competencia 1.2", "width": 1.5}, {"color": "#999999", "from": "Big Data Aplicada a los Negocios", "to": "Competencia 1.3", "width": 1.5}, {"color": "#999999", "from": "Big Data Aplicada a los Negocios", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Big Data Aplicada a los Negocios", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Big Data Aplicada a los Negocios", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Big Data Aplicada a los Negocios", "to": "Competencia 5.1", "width": 1.5}, {"color": "#999999", "from": "Big Data Aplicada a los Negocios", "to": "Competencia 5.3", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica del Comercio Electr\u00f3nico", "to": "Competencia 1.2", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica del Comercio Electr\u00f3nico", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica del Comercio Electr\u00f3nico", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica del Comercio Electr\u00f3nico", "to": "Competencia 2.3", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica del Comercio Electr\u00f3nico", "to": "Competencia 3.1", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica del Comercio Electr\u00f3nico", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica del Comercio Electr\u00f3nico", "to": "Competencia 3.3", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica del Comercio Electr\u00f3nico", "to": "Competencia 4.2", "width": 1.5}, {"color": "#999999", "from": "Datos Geolocalizados para los Negocios", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Datos Geolocalizados para los Negocios", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Datos Geolocalizados para los Negocios", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Datos Geolocalizados para los Negocios", "to": "Competencia 3.3", "width": 1.5}, {"color": "#999999", "from": "Datos Geolocalizados para los Negocios", "to": "Competencia 4.1", "width": 1.5}, {"color": "#999999", "from": "Datos Geolocalizados para los Negocios", "to": "Competencia 5.3", "width": 1.5}, {"color": "#999999", "from": "Emprendimiento en la Era Digital", "to": "Competencia 1.1", "width": 1.5}, {"color": "#999999", "from": "Emprendimiento en la Era Digital", "to": "Competencia 1.2", "width": 1.5}, {"color": "#999999", "from": "Emprendimiento en la Era Digital", "to": "Competencia 1.3", "width": 1.5}, {"color": "#999999", "from": "Emprendimiento en la Era Digital", "to": "Competencia 3.1", "width": 1.5}, {"color": "#999999", "from": "Emprendimiento en la Era Digital", "to": "Competencia 4.3", "width": 1.5}, {"color": "#999999", "from": "Negocios Digitales y Servicios en la Nube", "to": "Competencia 1.1", "width": 1.5}, {"color": "#999999", "from": "Negocios Digitales y Servicios en la Nube", "to": "Competencia 1.2", "width": 1.5}, {"color": "#999999", "from": "Negocios Digitales y Servicios en la Nube", "to": "Competencia 1.3", "width": 1.5}, {"color": "#999999", "from": "Negocios Digitales y Servicios en la Nube", "to": "Competencia 4.3", "width": 1.5}, {"color": "#999999", "from": "Negocios Digitales y Servicios en la Nube", "to": "Competencia 5.1", "width": 1.5}, {"color": "#999999", "from": "Negocios Digitales y Servicios en la Nube", "to": "Competencia 5.3", "width": 1.5}, {"color": "#999999", "from": "Automatizaci\u00f3n de Procesos", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Automatizaci\u00f3n de Procesos", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Automatizaci\u00f3n de Procesos", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Automatizaci\u00f3n de Procesos", "to": "Competencia 5.1", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica de Cadenas de Suministro", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica de Cadenas de Suministro", "to": "Competencia 3.3", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica de Cadenas de Suministro", "to": "Competencia 4.3", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica de Cadenas de Suministro", "to": "Competencia 5.1", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica de Cadenas de Suministro", "to": "Competencia 5.3", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica de Consumo Masivo", "to": "Competencia 1.3", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica de Consumo Masivo", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica de Consumo Masivo", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica de Consumo Masivo", "to": "Competencia 3.1", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica de Consumo Masivo", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica de Consumo Masivo", "to": "Competencia 5.1", "width": 1.5}, {"color": "#999999", "from": "Gerencia Estrat\u00e9gica de Datos e Informaci\u00f3n", "to": "Competencia 1.2", "width": 1.5}, {"color": "#999999", "from": "Gerencia Estrat\u00e9gica de Datos e Informaci\u00f3n", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Gerencia Estrat\u00e9gica de Datos e Informaci\u00f3n", "to": "Competencia 2.3", "width": 1.5}, {"color": "#999999", "from": "Gerencia Estrat\u00e9gica de Datos e Informaci\u00f3n", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Gerencia Estrat\u00e9gica de Datos e Informaci\u00f3n", "to": "Competencia 4.2", "width": 1.5}, {"color": "#999999", "from": "Gerencia Estrat\u00e9gica de Datos e Informaci\u00f3n", "to": "Competencia 5.2", "width": 1.5}, {"color": "#999999", "from": "Gerencia Estrat\u00e9gica de Datos e Informaci\u00f3n", "to": "Competencia 5.3", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica para la Innovaci\u00f3n Empresarial", "to": "Competencia 1.2", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica para la Innovaci\u00f3n Empresarial", "to": "Competencia 1.3", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica para la Innovaci\u00f3n Empresarial", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica para la Innovaci\u00f3n Empresarial", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica para la Innovaci\u00f3n Empresarial", "to": "Competencia 3.1", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica para la Innovaci\u00f3n Empresarial", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica para la Innovaci\u00f3n Empresarial", "to": "Competencia 5.1", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica para la Innovaci\u00f3n Empresarial", "to": "Competencia 5.3", "width": 1.5}, {"color": "#999999", "from": "Pruebas A-B y Experimentaci\u00f3n Digital", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Pruebas A-B y Experimentaci\u00f3n Digital", "to": "Competencia 3.1", "width": 1.5}, {"color": "#999999", "from": "Pruebas A-B y Experimentaci\u00f3n Digital", "to": "Competencia 5.2", "width": 1.5}, {"color": "#999999", "from": "Proyecto Integrador y Evaluaci\u00f3n Externa", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Proyecto Integrador y Evaluaci\u00f3n Externa", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Proyecto Integrador y Evaluaci\u00f3n Externa", "to": "Competencia 3.3", "width": 1.5}, {"color": "#999999", "from": "Proyecto Integrador y Evaluaci\u00f3n Externa", "to": "Competencia 4.3", "width": 1.5}, {"color": "#999999", "from": "Proyecto Integrador y Evaluaci\u00f3n Externa", "to": "Competencia 5.1", "width": 1.5}, {"color": "#999999", "from": "Proyecto Integrador y Evaluaci\u00f3n Externa", "to": "Competencia 5.2", "width": 1.5}, {"color": "#999999", "from": "Desarrollo de Canales de Distribuci\u00f3n y Venta Digital", "to": "Competencia 1.1", "width": 1.5}, {"color": "#999999", "from": "Desarrollo de Canales de Distribuci\u00f3n y Venta Digital", "to": "Competencia 1.2", "width": 1.5}, {"color": "#999999", "from": "Desarrollo de Canales de Distribuci\u00f3n y Venta Digital", "to": "Competencia 3.1", "width": 1.5}, {"color": "#999999", "from": "Desarrollo de Canales de Distribuci\u00f3n y Venta Digital", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Gobierno de Datos, Privacidad y Seguridad", "to": "Competencia 2.3", "width": 1.5}, {"color": "#999999", "from": "Gobierno de Datos, Privacidad y Seguridad", "to": "Competencia 3.3", "width": 1.5}, {"color": "#999999", "from": "Gobierno de Datos, Privacidad y Seguridad", "to": "Competencia 4.2", "width": 1.5}, {"color": "#999999", "from": "\u00c9tica en Anal\u00edtica y Negocios Digitales", "to": "Competencia 3.3", "width": 1.5}, {"color": "#999999", "from": "\u00c9tica en Anal\u00edtica y Negocios Digitales", "to": "Competencia 4.1", "width": 1.5}, {"color": "#999999", "from": "\u00c9tica en Anal\u00edtica y Negocios Digitales", "to": "Competencia 4.3", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica de Redes Sociales y Teor\u00eda de Grafos", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Anal\u00edtica de Redes Sociales y Teor\u00eda de Grafos", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Aprendizaje Autom\u00e1tico Aplicado a Finanzas", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Aprendizaje Autom\u00e1tico Aplicado a Finanzas", "to": "Competencia 5.3", "width": 1.5}, {"color": "#999999", "from": "Optimizaci\u00f3n y Eficiencia de la IA", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Optimizaci\u00f3n y Eficiencia de la IA", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Sistemas de Gesti\u00f3n de Datos", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Sistemas de Gesti\u00f3n de Datos", "to": "Competencia 2.3", "width": 1.5}, {"color": "#999999", "from": "Laboratorio de Anal\u00edtica", "to": "Competencia 2.1", "width": 1.5}, {"color": "#999999", "from": "Laboratorio de Anal\u00edtica", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Soluci\u00f3n Avanzada de Problemas de Anal\u00edtica", "to": "Competencia 2.2", "width": 1.5}, {"color": "#999999", "from": "Soluci\u00f3n Avanzada de Problemas de Anal\u00edtica", "to": "Competencia 3.2", "width": 1.5}, {"color": "#999999", "from": "Ciudadan\u00eda Mundial y Medio Ambiente", "to": "Competencia 4.3", "width": 1.5}, {"color": "#999999", "from": "Ciudadan\u00eda Mundial y Medio Ambiente", "to": "Competencia 5.1", "width": 1.5}, {"color": "#999999", "from": "La Persona en su Entorno Socioambiental", "to": "Competencia 4.3", "width": 1.5}, {"color": "#999999", "from": "Construcci\u00f3n de Democracia y Sostenibilidad", "to": "Competencia 4.3", "width": 1.5}, {"color": "#999999", "from": "Taller de Formaci\u00f3n y Acci\u00f3n Social", "to": "Competencia 4.3", "width": 1.5}, {"color": "#999999", "from": "Inmersi\u00f3n Social / Reto de Hallazgos", "to": "Competencia 4.3", "width": 1.5}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"interaction": {"hover": true, "tooltipDelay": 200, "navigationButtons": true, "dragNodes": true, "multiselect": true, "zoomView": true}, "physics": {"barnesHut": {"gravitationalConstant": -30000, "centralGravity": 0.15, "springLength": 180, "springConstant": 0.04}, "stabilization": {"iterations": 200}}, "nodes": {"font": {"size": 14, "color": "white"}}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    
+
+<script>
+
+var nodesData = [{"id": "Anal\u00edtica de Cadenas de Suministro", "tipo": "asignatura", "funcion": ""}, {"id": "Anal\u00edtica de Consumo Masivo", "tipo": "asignatura", "funcion": ""}, {"id": "Anal\u00edtica de Redes Sociales y Teor\u00eda de Grafos", "tipo": "asignatura", "funcion": ""}, {"id": "Anal\u00edtica del Comercio Electr\u00f3nico", "tipo": "asignatura", "funcion": ""}, {"id": "Anal\u00edtica para la Innovaci\u00f3n Empresarial", "tipo": "asignatura", "funcion": ""}, {"id": "An\u00e1lisis y Gesti\u00f3n Digital de Estados Financieros", "tipo": "asignatura", "funcion": ""}, {"id": "Aprendizaje Autom\u00e1tico Aplicado a Finanzas", "tipo": "asignatura", "funcion": ""}, {"id": "Automatizaci\u00f3n de Procesos", "tipo": "asignatura", "funcion": ""}, {"id": "Bases de Datos para Negocios Digitales", "tipo": "asignatura", "funcion": ""}, {"id": "Big Data Aplicada a los Negocios", "tipo": "asignatura", "funcion": ""}, {"id": "Ciudadan\u00eda Mundial y Medio Ambiente", "tipo": "asignatura", "funcion": ""}, {"id": "Construcci\u00f3n de Democracia y Sostenibilidad", "tipo": "asignatura", "funcion": ""}, {"id": "Datos Geolocalizados para los Negocios", "tipo": "asignatura", "funcion": ""}, {"id": "Desarrollo de Canales de Distribuci\u00f3n y Venta Digital", "tipo": "asignatura", "funcion": ""}, {"id": "Emprendimiento en la Era Digital", "tipo": "asignatura", "funcion": ""}, {"id": "Fundamentos de Negocios Digitales", "tipo": "asignatura", "funcion": ""}, {"id": "Gerencia Estrat\u00e9gica de Datos e Informaci\u00f3n", "tipo": "asignatura", "funcion": ""}, {"id": "Gobierno de Datos, Privacidad y Seguridad", "tipo": "asignatura", "funcion": ""}, {"id": "Inmersi\u00f3n Social / Reto de Hallazgos", "tipo": "asignatura", "funcion": ""}, {"id": "Inteligencia de Negocios Digitales", "tipo": "asignatura", "funcion": ""}, {"id": "La Persona en su Entorno Socioambiental", "tipo": "asignatura", "funcion": ""}, {"id": "Laboratorio de Anal\u00edtica", "tipo": "asignatura", "funcion": ""}, {"id": "Modelos de Anal\u00edtica Descriptiva, Predictiva y Prescriptiva", "tipo": "asignatura", "funcion": ""}, {"id": "Negocios Digitales y Servicios en la Nube", "tipo": "asignatura", "funcion": ""}, {"id": "Optimizaci\u00f3n y Eficiencia de la IA", "tipo": "asignatura", "funcion": ""}, {"id": "Programaci\u00f3n para Anal\u00edtica", "tipo": "asignatura", "funcion": ""}, {"id": "Proyecto Integrador y Evaluaci\u00f3n Externa", "tipo": "asignatura", "funcion": ""}, {"id": "Pruebas A-B y Experimentaci\u00f3n Digital", "tipo": "asignatura", "funcion": ""}, {"id": "Retos de Hallazgos", "tipo": "asignatura", "funcion": ""}, {"id": "Sistemas de Gesti\u00f3n de Datos", "tipo": "asignatura", "funcion": ""}, {"id": "Soluci\u00f3n Avanzada de Problemas de Anal\u00edtica", "tipo": "asignatura", "funcion": ""}, {"id": "Taller de Formaci\u00f3n y Acci\u00f3n Social", "tipo": "asignatura", "funcion": ""}, {"id": "Visualizaci\u00f3n de Datos de Negocios", "tipo": "asignatura", "funcion": ""}, {"id": "\u00c9tica en Anal\u00edtica y Negocios Digitales", "tipo": "asignatura", "funcion": ""}, {"id": "Competencia 1.1", "tipo": "competencia", "funcion": "1"}, {"id": "Competencia 1.2", "tipo": "competencia", "funcion": "1"}, {"id": "Competencia 1.3", "tipo": "competencia", "funcion": "1"}, {"id": "Competencia 2.1", "tipo": "competencia", "funcion": "2"}, {"id": "Competencia 2.2", "tipo": "competencia", "funcion": "2"}, {"id": "Competencia 2.3", "tipo": "competencia", "funcion": "2"}, {"id": "Competencia 3.1", "tipo": "competencia", "funcion": "3"}, {"id": "Competencia 3.2", "tipo": "competencia", "funcion": "3"}, {"id": "Competencia 3.3", "tipo": "competencia", "funcion": "3"}, {"id": "Competencia 4.1", "tipo": "competencia", "funcion": "4"}, {"id": "Competencia 4.2", "tipo": "competencia", "funcion": "4"}, {"id": "Competencia 4.3", "tipo": "competencia", "funcion": "4"}, {"id": "Competencia 5.1", "tipo": "competencia", "funcion": "5"}, {"id": "Competencia 5.2", "tipo": "competencia", "funcion": "5"}, {"id": "Competencia 5.3", "tipo": "competencia", "funcion": "5"}];
+
+function resetGraph(){
+
+    document.getElementById(
+        "asignaturaFilter"
+    ).value="ALL";
+
+    document.getElementById(
+        "funcionFilter"
+    ).value="ALL";
+
+    document.getElementById(
+        "competenciaFilter"
+    ).value="ALL";
+
+    applyFilters();
+}
+
+function applyFilters(){
+
+    var asignatura =
+        document.getElementById(
+        "asignaturaFilter"
+        ).value;
+
+    var funcion =
+        document.getElementById(
+        "funcionFilter"
+        ).value;
+
+    var competencia =
+        document.getElementById(
+        "competenciaFilter"
+        ).value;
+
+    nodes.forEach(function(n){
+        nodes.update({
+            id:n.id,
+            hidden:true
+        });
+    });
+
+    edges.forEach(function(e){
+        edges.update({
+            id:e.id,
+            hidden:true
+        });
+    });
+
+    if(
+        asignatura=="ALL"
+        &&
+        funcion=="ALL"
+        &&
+        competencia=="ALL"
+    ){
+
+        nodes.forEach(function(n){
+            nodes.update({
+                id:n.id,
+                hidden:false
+            });
+        });
+
+        edges.forEach(function(e){
+            edges.update({
+                id:e.id,
+                hidden:false
+            });
+        });
+
+        network.fit();
+
+        return;
+    }
+
+    let visibleNodes = new Set();
+
+    edges.forEach(function(edge){
+
+        let mostrar = false;
+
+        if(
+            asignatura!="ALL"
+            &&
+            (
+             edge.from==asignatura
+             ||
+             edge.to==asignatura
+            )
+        ) mostrar=true;
+
+        if(
+            competencia!="ALL"
+            &&
+            (
+             edge.from==competencia
+             ||
+             edge.to==competencia
+            )
+        ) mostrar=true;
+
+        if(funcion!="ALL"){
+
+            nodesData.forEach(function(n){
+
+                if(
+                    n.funcion==funcion
+                    &&
+                    (
+                     edge.from==n.id
+                     ||
+                     edge.to==n.id
+                    )
+                ){
+                    mostrar=true;
+                }
+
+            });
+        }
+
+        if(mostrar){
+
+            edges.update({
+                id:edge.id,
+                hidden:false
+            });
+
+            visibleNodes.add(edge.from);
+
+            visibleNodes.add(edge.to);
+        }
+
+    });
+
+    nodes.forEach(function(node){
+
+        nodes.update({
+            id:node.id,
+            hidden:!visibleNodes.has(node.id)
+        });
+
+    });
+
+    network.fit({
+        animation:true
+    });
+
+}
+
+</script>
+
+</body>
+</html>

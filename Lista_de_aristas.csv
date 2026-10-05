@@ -1,7 +1,10 @@
 Asignatura,Funciones,Competencia_ID,Semestre
 Taller de Integración Universitaria,Ejerce liderazgo humanista en la transformación digital,Competencia 4.2,1
+Taller de Integración Universitaria,Diseña propuestas y estrategias para apoyar la toma de decisiones,Competencia 3.2,1
 Taller de Escritura Académica,Ejerce liderazgo humanista en la transformación digital,Competencia 4.3,1
+Taller de Escritura Académica,Diseña propuestas y estrategias para apoyar la toma de decisiones,Competencia 3.1,1
 Taller de Escritura Académica,Ejerce liderazgo humanista en la transformación digital,Competencia 4.2,1
+Taller de Escritura Académica,Formula recomendaciones y planes para la transformación digital y asegurar su sostenibilidad,Competencia 5.2,1
 Fundamentos de Negocios Digitales,Propone modelos de negocio y emprendimiento,Competencia 1.1,1
 Fundamentos de Negocios Digitales,Propone modelos de negocio y emprendimiento,Competencia 1.2,1
 Fundamentos de Negocios Digitales,Propone modelos de negocio y emprendimiento,Competencia 1.3,1
@@ -56,6 +59,8 @@ Big Data Aplicada a los Negocios,Diseña propuestas y estrategias para apoyar la
 Big Data Aplicada a los Negocios,Formula recomendaciones y planes para la transformación digital y asegurar su sostenibilidad,Competencia 5.1,4
 Big Data Aplicada a los Negocios,Formula recomendaciones y planes para la transformación digital y asegurar su sostenibilidad,Competencia 5.3,4
 Interpersonalidad y trascendencias,Ejerce liderazgo humanista en la transformación digital,Competencia 4.3,5
+Interpersonalidad y trascendencias,Ejerce liderazgo humanista en la transformación digital,Competencia 4.2,5
+Interpersonalidad y trascendencias,Formula recomendaciones y planes para la transformación digital y asegurar su sostenibilidad,Competencia 5.2,5
 Analítica del Comercio Electrónico,Propone modelos de negocio y emprendimiento,Competencia 1.2,5
 Analítica del Comercio Electrónico,Analiza volúmenes masivos de datos para generar conocimiento util,Competencia 2.1,5
 Analítica del Comercio Electrónico,Analiza volúmenes masivos de datos para generar conocimiento util,Competencia 2.2,5
@@ -163,9 +168,14 @@ Optativa II: Innovación digital en organizaciones sociales,Ejerce liderazgo hum
 Optativa II: Innovación digital en organizaciones sociales,Formula recomendaciones y planes para la transformación digital y asegurar su sostenibilidad,Competencia 5.2,7
 Optativa II: Innovación digital en organizaciones sociales,Diseña propuestas y estrategias para apoyar la toma de decisiones,Competencia 3.3,7
 Ciudadanía Mundial y Medio Ambiente,Formula recomendaciones y planes para la transformación digital y asegurar su sostenibilidad,Competencia 5.1,4
+Ciudadanía Mundial y Medio Ambiente,Formula recomendaciones y planes para la transformación digital y asegurar su sostenibilidad,Competencia 5.3,4
 La Persona en su Entorno Socioambiental,Ejerce liderazgo humanista en la transformación digital,Competencia 4.3,3
+La Persona en su Entorno Socioambiental,Diseña propuestas y estrategias para apoyar la toma de decisiones,Competencia 3.3,3
 Construcción de Democracia y Sostenibilidad,Ejerce liderazgo humanista en la transformación digital,Competencia 4.3,6
+Construcción de Democracia y Sostenibilidad,Ejerce liderazgo humanista en la transformación digital,Competencia 4.1,6
 Taller de Formación y Acción Social,Ejerce liderazgo humanista en la transformación digital,Competencia 4.3,7
+Taller de Formación y Acción Social,Analiza volúmenes masivos de datos para generar conocimiento util,Competencia 2.3,7
+Taller de Formación y Acción Social,Diseña propuestas y estrategias para apoyar la toma de decisiones,Competencia 3.2,7
 Inmersión Social / Reto de Hallazgos,Ejerce liderazgo humanista en la transformación digital,Competencia 4.3,4
 ASE II: Impacto Responsable,Ejerce liderazgo humanista en la transformación digital,Competencia 4.1,6
 ASE II: Impacto Responsable,Ejerce liderazgo humanista en la transformación digital,Competencia 4.2,6

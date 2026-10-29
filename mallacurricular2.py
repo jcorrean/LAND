@@ -56,9 +56,9 @@ funciones = {
 # ==========================================
 
 descripciones = {
-    "Competencia 1.1": "Propone modelos de negocio y emprendimiento en sectores digitales para capitalizar oportunidades estratégicas.",
-    "Competencia 1.2": "Propone nuevos modelos de negocio y apoya a la alta dirección en la toma de decisiones.",
-    "Competencia 1.3": "Implementa estrategias de emprendimiento digital para generar valor económico y social.",
+    "Competencia 1.1": "Entiende y aprovecha las formas de interacción entre la empresa, clientes, proveedores para la supervivencia del negocio",
+    "Competencia 1.2": "Propone nuevos modelos de negocio para aprovechar sus ventajas y apoya a la alta dirección para estos nuevos modelos de negocio.",
+    "Competencia 1.3": "Propone e implementa estrategias de emprendimiento generar valor económico y social con metodologías de innovación y tecnologías de vanguardia.",
     "Competencia 2.1": "Procesa grandes volúmenes de datos mediante software estadístico y lenguajes de programación.",
     "Competencia 2.2": "Identifica patrones, correlaciones y tendencias para la toma de decisiones estratégicas.",
     "Competencia 2.3": "Diseña estrategias de intervención sustentadas en datos para optimizar procesos organizacionales.",
@@ -91,7 +91,7 @@ def obtener_color_funcion(fn_nombre):
     for k, v in colores_funcion.items():
         if k.lower() in str(fn_nombre).lower() or str(fn_nombre).lower() in k.lower():
             return v
-    return "#1f77b4"
+    return "#FFFFFF"
 
 # ==========================================
 # 5. INICIALIZAR RED PYVIS (ALTURA AJUSTADA AL 100vh)
@@ -115,7 +115,7 @@ for asignatura in asignaturas:
     net.add_node(
         asignatura,
         label=asignatura,
-        color="#4A90E2",
+        color="#FFFFFF",
         tipo="asignatura",
         semestre=str(semestre_por_asignatura[asignatura]),
         shape="dot",
